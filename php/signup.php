@@ -7,13 +7,9 @@ $password = $_POST['password'];
 $sql = "INSERT INTO `user` (`id`, `name`, `email`, `age`, `password`, `date`) VALUES ('', '$name', '$email', '$age', '$password', current_timestamp())";
 $result = mysqli_query($conn, $sql);
 if($result){
-    $data = ['status' => true, 'message' => "Success! Your account was created successfully. Now you can login to continue access to our website"];
-    echo var_dump($data);
+   echo $name;
 }
 else{
-    $error = mysqli_connect_error($conn);
-    $data = ['status' => false, 'message' => $error];
-    echo var_dump($data);
+    echo mysqli_error($conn);
 }
-
 ?>

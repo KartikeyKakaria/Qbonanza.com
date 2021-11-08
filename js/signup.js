@@ -1,37 +1,35 @@
 $(document).ready(function() {
     // getting all variables
-  let name = $("#name").val();
-  let email = $("#email").val();
-  let Age = $("#Age").val();  
-  let Password = $("#Passowrd").val();
-  let confPassword = $("#confPassword").val();
-  $("#signup").click(function(){
-    //   e.preventDefault();
-    //   ajax query                
-      if(Password == confPassword){
-        $.ajax({
-            url:"/Qbonanza.com/php/signup.php",
-            type:"post",
-            data:{
-                name:name,
-                email:email,
-                age:Age,
-                pass:Password,
-                conf:confPassword,
-            },
-            success:function(data, status){
-                if(status=="success"){
-                    if(data['status']){
-                        console.log(data['message']);
-                    }
-                    else{
-                        console.log(data['message']);
-                        console.log(data)
-                    }
+    $("#signup").click(function() {
+        console.log(name);
+    })
+    $("#signup").click(function(){
+        //   e.preventDefault();
+        //   ajax query                
+        let Password = $("#Passowrd").value;
+        let confPassword = $("#confPassword").value;
+        if(Password == confPassword){
+            let name = $("#name").value;
+            let email = $("#email").value;
+            let Age = $("#Age").value;  
+            $.post("/Qbonanza.com/php/signup.php",{
+                // these are the variables sent via ajax to the php
+                nam: name,
+                emaile:email,
+                ager:Age,
+                passwordo:Password
+        },function(data, status){
+            if(status=="success"){
+                if(data=="success"){
+                    console.log("Successfully signed up!");
                 }
                 else{
-                    console.log("Error 404")
+                   console.log(data);
                 }
+                console.log(data);
+            }
+            else{
+                console.log("Error 404")
             }
         })
       }
