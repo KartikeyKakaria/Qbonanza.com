@@ -1,15 +1,24 @@
 <?php
-include 'partials/_dbconnect.php';
-$name = $_POST['name'];
-$age = $_POST['age'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-$sql = "INSERT INTO `user` (`id`, `name`, `email`, `age`, `password`, `date`) VALUES ('', '$name', '$email', '$age', '$password', current_timestamp())";
-$result = mysqli_query($conn, $sql);
-if($result){
-   echo $name;
-}
-else{
-    echo mysqli_error($conn);
-}
-?>
+$(document).ready(function() {
+    $("#signup").submit(function(event){
+        //event.preventDefault(); //prevent default action 
+        var post_url = $(this).attr("action"); //get form action url
+        var request_method = $(this).attr("method"); //get form GET/POST method
+        var form_data = $(this).serialize(); //Encode form elements for submission
+        
+        let name = $("#name").value;
+        let email = $("#email").value;
+        let age = $("#age").value;
+        let password = $("#password").value;
+        $.post("post_url",{
+            name : name,
+            email : email,
+            age : age,
+            password : password
+        },function(response){ 
+            //alert("success");
+            console.log(response.msg);
+        })
+       
+    });
+})
