@@ -56,21 +56,24 @@
         </div>
     </nav>
     <div class="container my-2">
-        
-            <h1>SIGNUP</h1>
-            <label for="namo">Name: </label>
-            <input type="text" name="namo" id="namo" placeholder="Enter Name" class="form-control"><br>
+        <h1>SIGNUP</h1>
+        <form action="/php/signup.php" method="post" id="signup">
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" placeholder="Enter Name" class="form-control"><br>
+
             <label for="email">Email: </label>
             <input type="email" name="email" id="email" placeholder="Enter email" class="form-control"><br>
-            <label for="Age">Age: </label>
-            <input type="number" name="Age" id="Age" placeholder="Enter Age" class="form-control"><br>
-            <label for="Passowrd">Passowrd: </label>
-            <input type="password" name="Passowrd" id="Passowrd" placeholder="Enter Passowrd" class="form-control"><br>
-            <label for="confPassword">Confirm Password: </label>
-            <input type="password" name="confPassword" id="confPassword" placeholder="Confirm Password"
+
+            <label for="age">Age: </label>
+            <input type="number" name="age" id="age" placeholder="Enter Age" class="form-control"><br>
+            
+            <label for="password">Passowrd: </label>
+            <input type="password" name="password" id="password" placeholder="Enter Passowrd" class="form-control"><br>
+            <label for="confirmpassword">Confirm Password: </label>
+            <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password"
                 class="form-control"><br>
-            <button class="btn btn-success" id="signup" type="button">Signup</button>
-        
+            <input class="btn btn-success" id="submit" type="submit" value="Signup">
+        </form>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
