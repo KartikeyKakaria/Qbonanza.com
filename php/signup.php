@@ -1,11 +1,15 @@
 <?php
-include 'partials/_dbconnect.php';
-    if(isset($_POST['name'])){
-        $name = $_POST['name'];  
-        $age = $_POST['age']; 
-        $email = $_POST['email'];;
-        $password = $_POST['password']; 
+    // echo $data->name;
+    include 'partials/_dbconnect.php';
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $json = file_get_contents('php://input');
+        $data = json_decode($json);
+        $name = $data->name;  
+        $age = $data->age; 
+        $email = $data->email;
+        $password = $data->password; 
         $sql = "INSERT INTO `user` (`id`, `name`, `email`, `age`, `password`, `date`) VALUES ('', '$name', '$email', '$age', '$password', current_timestamp())";
+        
         try{
             //Get DB Object
             $database = new Database();
@@ -17,12 +21,14 @@ include 'partials/_dbconnect.php';
             $id = $db->lastInsertId();
             if($id){
                 $message = 'Signup successfully';
-                json_encode([
+                echo json_encode([
+                    'status' => true,
                     'msg' => $message,
                 ]);
             }else{
                 $message = 'Something went wrong';
                 echo json_encode([
+                    'status' => false,
                     'msg' => $message,
                 ]);
             }

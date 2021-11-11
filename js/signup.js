@@ -1,35 +1,51 @@
 $(document).ready(function() {
     // getting all variables
-    $("#signup").click(function() {
-        console.log(name);
-    })
-    $("#signup").click(function() {
+    $("#submit").click(function() {
         //   e.preventDefault();
         //   ajax query                
-        let Password = $("#Passowrd").value;
-        let confPassword = $("#confPassword").value;
+        let Password = document.querySelector("#password").value;
+        let confPassword = document.querySelector("#confirmpassword").value;
         if (Password == confPassword) {
-            let name = $("#name").value;
-            let email = $("#email").value;
-            let Age = $("#Age").value;
-            $.post("/Qbonanza.com/php/signup.php", {
+            let name = document.querySelector("#name").value;
+            let email = document.querySelector("#email").value;
+            let Age = document.querySelector("#age").value;
+            let dat = {
                 // these are the variables sent via ajax to the php
-                nam: name,
-                emaile: email,
-                ager: Age,
-                passwordo: Password
-            }, function(data, status) {
-                if (status == "success") {
-                    if (data == "success") {
-                        console.log("Successfully signed up!");
+                name: name,
+                email: email,
+                age: Age,
+                password: Password
+            }
+            let data = JSON.stringify(dat);
+            // $.post("/Qbonanza.com/php/signup.php", data, function(data, status) {
+            //     if (status == "success") {
+            //         if (data == "success") {
+            //             console.log("Successfully signed up!");
+            //         } else {
+            //             console.log(data);
+            //         }
+            //         console.log(data);
+            //     } else {
+            //         console.log("Error 404")
+            //     }
+            // })
+            let params = {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: data
+            }
+            fetch('/Qbonanza.com/php/signup.php', params)
+                .then(response => response.json())
+                .then((data) => {
+                    if (data.status) {
+                        console.log(data.msg)
                     } else {
-                        console.log(data);
+                        console.log(data.msg)
                     }
-                    console.log(data);
-                } else {
-                    console.log("Error 404")
-                }
-            })
+                })
+                .catch(error => console.log(error))
         } else {
             console.log("Passwords dont match");
             console.log(Password)
