@@ -17,18 +17,7 @@ $(document).ready(function() {
                 password: Password
             }
             let data = JSON.stringify(dat);
-            // $.post("/Qbonanza.com/php/signup.php", data, function(data, status) {
-            //     if (status == "success") {
-            //         if (data == "success") {
-            //             console.log("Successfully signed up!");
-            //         } else {
-            //             console.log(data);
-            //         }
-            //         console.log(data);
-            //     } else {
-            //         console.log("Error 404")
-            //     }
-            // })
+
             let params = {
                 method: 'post',
                 headers: {
