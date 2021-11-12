@@ -22,6 +22,7 @@ window.onload = () => {
                     console.log(data.message);
                     user = JSON.stringify(data);
                     localStorage.setItem('user', user);
+                    updateHeader();
                 } else {
                     console.log(data.message);
                 }
