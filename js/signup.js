@@ -29,12 +29,14 @@ $(document).ready(function() {
                 .then(response => response.json())
                 .then((data) => {
                     if (data.status) {
-                        console.log(data.msg)
+                        document.querySelector("#alert").innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Success!</strong> ${data.msg}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
                     } else {
-                        console.log(data.msg)
+                        document.querySelector("#alert").innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Error!</strong> ${data.msg}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
                     }
                 })
-                .catch(error => console.log(error))
+                .catch((error) => {
+                    document.querySelector("#alert").innerHTML = `<div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>Error!</strong> ${error}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+                })
         } else {
             console.log("Passwords dont match");
             console.log(Password)

@@ -22,12 +22,14 @@ window.onload = () => {
                     console.log(data.message);
                     user = JSON.stringify(data);
                     localStorage.setItem('user', user);
+                    document.querySelector("#alert").innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Success!</strong> ${data.message}<br>Go to homepage:- <a href="index.html">home</a><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
                     updateHeader();
                 } else {
-                    console.log(data.message);
+                    document.querySelector("#alert").innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Error!</strong> ${data.msg}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
                 }
                 // console.log(JSON.parse(data));
             })
-            .catch(error => console.log(error))
+            //     .catch((error) => { document.querySelector("#alert").innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Error!</strong> ${error}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+            //  })
     })
 }
