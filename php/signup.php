@@ -20,13 +20,13 @@
             $stmt->execute();
             $id = $db->lastInsertId();
             if($id){
-                $message = 'Signup successfully';
+                $message = 'Your account was created successfully. Now you can login to continue access to the website';
                 echo json_encode([
                     'status' => true,
                     'msg' => $message,
                 ]);
             }else{
-                $message = 'Something went wrong';
+                $message = 'Something went wrong. We are sorry for the inconvenience caused';
                 echo json_encode([
                     'status' => false,
                     'msg' => $message,
