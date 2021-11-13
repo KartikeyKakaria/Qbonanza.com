@@ -6,7 +6,13 @@ function updateHeader() {
 
     } else {
         let userDetails = JSON.parse(user);
-        document.querySelector('#nav').innerHTML = '<a href="profile.html" class="mx-2"><button type="button" class="btn btn-success">' + userDetails.name + '</button></a><button type="button" class="btn btn-warning" id="logout">Logout</button>';
+        document.querySelector('#nav').innerHTML = '<a href="profile.html" class="mx-2"><button type="button" class="btn btn-success">' + userDetails.name + '</button></a><button id="logout" type="button" class="btn btn-warning" id="logout">Logout</button>';
     }
 }
 updateHeader();
+if(document.querySelector("#logout") !== undefined){
+    document.querySelector("#logout").addEventListener("click",()=>{
+        localStorage.removeItem('user');
+        window.location = "login.html";
+    })
+}
