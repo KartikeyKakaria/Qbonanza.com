@@ -1,3 +1,42 @@
+#rest{
+    background-image: linear-gradient(to bottom right, lightblue, cyan);
+    text-align: center;
+    justify-content:center;
+    height:497px;
+}
+table, th, td{
+    /* border:5px solid black; */
+    padding:5px;
+}
+#id:hover{
+    cursor:move;
+}
+#profile{
+    position:relative;
+    left:40%;
+}
 #edit{
     text-decoration: underline;
 } 
+.mid{
+    background-color: rgba(231, 223, 213, 0.63);
+    height:200px;
+    width:100%;
+    padding:30px;
+    border-bottom:5px solid black;
+}
+ul#header{
+    list-style-type:none;
+    float:left;
+}
+ul#header li{
+    float:left;
+    margin:10px
+}
+#headerName{
+    font-size:60px;
+    margin:5px;
+}
+#headerEmail{
+    margin:5px;
+}

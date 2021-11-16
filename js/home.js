@@ -3,9 +3,13 @@ function displayData(){
         let name = document.querySelector("#name");
         let email = document.querySelector("#email");
         let age = document.querySelector("#age");
+        let hName = document.querySelector("#headerName");
+        let hEmail = document.querySelector("#headerEmail");
         name.innerHTML = user.name;
         email.innerHTML = user.email;
         age.innerHTML = user.age;
+        hName.innerHTML = user.name;
+        hEmail.innerHTML = user.email;
 }
 window.onload= ()=>{
     displayData();
