@@ -17,7 +17,7 @@
             $stmt = $db->prepare($sql);
             $stmt->execute();
             $id = $db->lastInsertId();
-            if($id){
+            if($id == 0){
                 $message = 'Your account was updated successfully.';
                 echo json_encode([
                     'status' => true,
@@ -34,6 +34,7 @@
                     'msg' => $message,
                 ]);
             }
+            // echo $id;
         }catch(PDOException $e){
             echo '"error": {"text": '.$e->getMessage().'}';
         }
