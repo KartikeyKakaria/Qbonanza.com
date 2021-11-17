@@ -1,23 +1,31 @@
 #rest{
     background-image: linear-gradient(to bottom right, lightblue, cyan);
-    text-align: center;
-    justify-content:center;
+    text-align: left;
+    justify-content:left;
+    /* margin:5px; */
     height:497px;
+}
+h1{
+    margin-left:10px;
+}
+.cat{
+    font-weight: bold;
+    text-decoration: underline;
 }
 table, th, td{
     /* border:5px solid black; */
     padding:5px;
 }
-#id:hover{
-    cursor:move;
+img:hover{
+    cursor:pointer;
 }
 #profile{
+    text-align:left;
     position:relative;
-    left:40%;
+    left:0px;
+    font-size:30px;
+    margin:10px;
 }
-#edit{
-    text-decoration: underline;
-} 
 .mid{
     background-color: rgba(231, 223, 213, 0.63);
     height:200px;
@@ -39,4 +47,19 @@ ul#header li{
 }
 #headerEmail{
     margin:5px;
+}
+/* #footer{
+    font-size:20px;
+    background-color:red;
+    border:2px solid red;
+    border-radius:12px;
+    padding: 5px 0px;
+    width:50px;
+    position:relative;
+} */
+#footer{
+    /* margin:50px; */
+    text-decoration: none;
+    padding:5px;
+    font-size: 20px;
 }
