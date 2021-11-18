@@ -40,13 +40,6 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `age`, `password`, `date`) VALUES
-(1, 'Kamal Kumar', 'kamalkumar@hotmail.com', '57', 'kamsam2007', '2021-11-06 07:30:15'),
-(11, '', '', '', '', '2021-11-08 12:52:04'),
-(12, '', '', '', '', '2021-11-08 12:53:08'),
-(13, '', '', '', '', '2021-11-08 12:58:34'),
-(14, '', '', '', '', '2021-11-08 13:02:04');
-
 --
 -- Indexes for dumped tables
 --
