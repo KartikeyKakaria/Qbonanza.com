@@ -23,13 +23,15 @@ window.onload = () => {
                     user = JSON.stringify(data);
                     localStorage.setItem('user', user);
                     document.querySelector("#alert").innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Success!</strong> ${data.message}<br>Go to homepage:- <a href="index.html">home</a><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+                    // console.log(data.msg)
                     updateHeader();
                 } else {
                     document.querySelector("#alert").innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Error!</strong> ${data.msg}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
                 }
                 // console.log(JSON.parse(data));
             })
-            //     .catch((error) => { document.querySelector("#alert").innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Error!</strong> ${error}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
-            //  })
+            .catch((error) => {
+                document.querySelector("#alert").innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Error!</strong> ${error}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+            })
     })
 }
