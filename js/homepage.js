@@ -13,7 +13,15 @@ function displayData(data) {
         i++
     }
 }
+data = JSON.stringify({lol:"lol"});
+let params = {
+    method:"post",
+    headers:{
+        "Content-Type": "application/json"
+    },
+    body:data,
+}
 fetch("/Qbonanza.com/php/index.php", params)
     .then(response => response.json())
-    .then(data => displayTopic("hello"))
-    .catch(error => console.log(error))
+    .then(data => console.log(data))
+    // .catch(error => console.log(error))

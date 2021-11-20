@@ -21,3 +21,14 @@ class Database{
      return $this->conn;
  }
 }
+ ?>
+ <?php
+class Topics{
+     public $topic;
+     
+     public function __construct(){
+         $this->topic = array();
+     }
+ }
+ ?>
+
