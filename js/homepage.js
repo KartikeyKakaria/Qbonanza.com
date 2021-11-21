@@ -8,10 +8,12 @@ if (user !== null) {
 }
 
 function displayData(data) {
-    while (i < 15) {
-        console.log(data);
-        i++
-    }
+    let htmlStr = "";
+    data.forEach((element)=>{
+        htmlStr+=`<div class="topic"><img src="images/topic/${element.id}.png" height="75px" width="75px"alt="USER"><br><button id="${element.id}">${element.name}</button></div>`;
+    })
+    document.querySelector('#topics').innerHTML = htmlStr;
+    // console.log(htmlStr);
 }
 data = JSON.stringify({lol:"lol"});
 let params = {
