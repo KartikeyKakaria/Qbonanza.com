@@ -45,7 +45,8 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                     'msg' => $message,
                 ]);
             }
-        }else{
+        }
+        else{
             $message = 'Something went wrong. We are sorry for the inconvenience caused.';
             echo json_encode([
                 'login' => false,

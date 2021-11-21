@@ -1,0 +1,21 @@
+body{
+    background-image:url('/Qbonanza.com/images/backgorund_index.PNG');
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+#topics{
+    display: inline;
+}
+.topic{
+    padding:5px;
+    width:12%;
+    /* display:inline; */
+    justify-content:center;
+    text-align:center;
+    background-image:linear-gradient(to bottom right,lightgray, white);
+}
+button{
+    background-color:blue;
+    padding:10px;
+    border-radius:12px;
+}
