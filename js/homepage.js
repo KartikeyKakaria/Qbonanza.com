@@ -23,5 +23,5 @@ let params = {
 }
 fetch("/Qbonanza.com/php/index.php", params)
     .then(response => response.json())
-    .then(data => console.log(data))
-    // .catch(error => console.log(error))
+    .then(data => displayData(data.topic))
+    .catch(error => console.log(error))

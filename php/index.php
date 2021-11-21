@@ -10,13 +10,13 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         //prepare sql1 statement
         $stmt = $db->prepare($sql);
         $stmt->execute();
-        $id = $db->fetchAll(PDO::FETCH_OBJ);
+        $id = $stmt->fetchAll(PDO::FETCH_OBJ);
         $topics = new Topics();
         if($id){
            foreach($id as $topic){
-               array_push($topics->topics,$topic);
+               array_push($topics->topic,$topic);
            }
-           echo json_decode($topics);
+           echo json_encode($topics);
         }else{
            echo var_dump($id);
         }
