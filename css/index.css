@@ -4,15 +4,19 @@ body{
     background-size: cover;
 }
 #topics{
-    display: inline;
+    display: flex;
+    border-top:2px solid black;
+    /* justify-content:center; */
 }
 .topic{
     padding:5px;
-    width:12%;
+    /* width:12%; */
     /* display:inline; */
-    justify-content:center;
-    text-align:center;
+    /* justify-content:center;
+    text-align:center; */
     background-image:linear-gradient(to bottom right,lightgray, white);
+    border:2px solid white;
+    margin:10px;
 }
 button{
     background-color:blue;

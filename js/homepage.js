@@ -10,7 +10,7 @@ if (user !== null) {
 function displayData(data) {
     let htmlStr = "";
     data.forEach((element)=>{
-        htmlStr+=`<div class="topic"><img src="images/topic/${element.id}.png" height="75px" width="75px"alt="USER"><br><button id="${element.id}">${element.name}</button></div>`;
+        htmlStr+=`<div class="topic"><img src="images/topic/${element.id}.png" height="75px" width="75px" alt="USER"><button id="${element.id}">${element.name}</button></div>`;
     })
     document.querySelector('#topics').innerHTML = htmlStr;
     // console.log(htmlStr);
