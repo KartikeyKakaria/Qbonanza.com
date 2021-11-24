@@ -2,7 +2,7 @@ window.onload = ()=>{
     const user = localStorage.getItem('user');
     const href = window.location.href;
     const LastChar = href[href.length - 1];
-    console.log(LastChar);
+    console.log(Last0Char);
     let dat = {
         post:false,
         id:LastChar,
@@ -21,7 +21,7 @@ window.onload = ()=>{
     //         content:document.querySelector('#content').value,
     //     }
     // }
-    let data = JSON.stringify(data);
+    let data = JSON.stringify(dat);
     let params = {
         method: 'post',
         headers: {
