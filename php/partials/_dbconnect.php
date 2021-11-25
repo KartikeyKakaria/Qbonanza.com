@@ -30,5 +30,11 @@ class Topics{
          $this->topic = array();
      }
  }
+ class questions{
+     public $question;
+     public function __construct(){
+         $this->question = array();
+     }
+ }
  ?>
 

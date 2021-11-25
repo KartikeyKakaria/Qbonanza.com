@@ -2,7 +2,7 @@ window.onload = ()=>{
     const user = localStorage.getItem('user');
     const href = window.location.href;
     const LastChar = href[href.length - 1];
-    console.log(Last0Char);
+    console.log(LastChar);
     let dat = {
         post:false,
         id:LastChar,
@@ -32,6 +32,6 @@ window.onload = ()=>{
     fetch("/Qbonanza.com/php/topic.php", params)
     .then(response => response.json())
     .then(data => console.log(data))
-    .catch(err => console.log(err))
+    // .catch(err => console.log(err))
 
 ;}
