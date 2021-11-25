@@ -8,6 +8,7 @@ window.onload = () => {
             password: password,
         }
         let data = JSON.stringify(data1);
+        //lol
         let parameters = {
             method: 'post',
             headers: {
