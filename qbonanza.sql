@@ -80,8 +80,7 @@ CREATE TABLE `user` (
 --
 -- Indexes for table `topics`
 --
-ALTER TABLE `topics`
-  ADD PRIMARY KEY (`id`);
+
 
 --
 -- Indexes for table `user`
