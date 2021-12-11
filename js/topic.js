@@ -30,7 +30,14 @@ window.onload = ()=>{
     }
     fetch("/Qbonanza.com/php/topic.php", params)
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+        let questions = data.question;
+        let str ="";
+        questions.forEach(question => {
+            str+="<div class='question'><h2>"+question.title+"</h2><p>"+question.description+"</p><br><p>Posted by "+question.id+" on "+question.date+"</p></div>"
+        })
+        document.querySelector("#questions").innerHTML = str;
+    })
     // .catch(err => console.log(err))
 
 ;}
