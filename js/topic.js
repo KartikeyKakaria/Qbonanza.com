@@ -4,14 +4,13 @@ window.onload = ()=>{
     const LastChar = href[href.length - 1];
     console.log(LastChar);
     let dat = {
-        post:false,
         id:LastChar,
-    };
+    }
     // if(user == null) {
-    //     let dat = {
+    //     let dat = { 
     //         post:false,
     //         id:LastChar,
-    // //     }
+    //     };
     // }
     // else{
     //     let dat = {
