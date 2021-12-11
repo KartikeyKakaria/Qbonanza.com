@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2021 at 05:35 AM
+-- Generation Time: Dec 11, 2021 at 04:51 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `qbonanza`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `questions`
+--
+
+CREATE TABLE `questions` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `topic_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `questions`
+--
+
+INSERT INTO `questions` (`id`, `user_id`, `topic_id`, `title`, `description`, `date`) VALUES
+(1, 1, 1, 'Pycharm Installation', 'hey guys i am unable to install pycharm on my system, its constantly throwing an error This file does not compatibilate with your system os', '2021-12-11 21:10:52');
 
 -- --------------------------------------------------------
 
@@ -74,8 +96,21 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `age`, `password`, `date`) VALUES
+(1, 'KartikeyKakaria', 'kk@gmail.com', '13', 'justapassword', '2021-12-11 15:38:56');
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `questions`
+--
+ALTER TABLE `questions`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `topics`
@@ -92,6 +127,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `questions`
+--
+ALTER TABLE `questions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `topics`
