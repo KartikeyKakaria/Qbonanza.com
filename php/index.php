@@ -1,6 +1,7 @@
 <?php
 include 'partials/_dbconnect.php';
 if($_SERVER['REQUEST_METHOD']=="POST"){
+    
     $sql = "SELECT * FROM `topics`";
     try{
         //Get DB Object
