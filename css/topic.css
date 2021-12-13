@@ -1,0 +1,17 @@
+#questions {
+    /* border-top:10px solid black; */
+    width:100%;
+
+}
+h1,h2{
+    margin:5px;
+}
+.question{
+    /* border:5px solid black; */
+    padding:8px;
+}
+body{
+    background-image: linear-gradient(to bottom right, lightblue, cyan);
+    background-repeat: no-repeat;
+    background-size:cover;
+}

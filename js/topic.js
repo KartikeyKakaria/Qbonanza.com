@@ -47,7 +47,7 @@ window.onload = ()=>{
             .then(response=>response.text())
             .then(nam =>  {
                 name = nam;
-                str+="<div class='question'><h2>"+question.title+"</h2><p>"+question.description+"</p><br><p>Posted by "+name+" on "+question.date+"</p></div>";
+                str+="<div class='question'><h4>"+question.title+"</h4><p>"+question.description+"</p><br><p>Posted by "+name+" on "+question.date+"</p></div>";
                 document.querySelector("#questions").innerHTML = str;
                 // console.log("data success")
             })
