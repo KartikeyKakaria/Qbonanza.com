@@ -12,7 +12,7 @@ class Database{
      $this->conn = null;
 
      try{
-         $this->conn = new PDO("mysql:host=localhost;dbname=" . $this->database, $this->uid, $this->pwd);
+         $this->conn = new PDO("mysql:localhost;dbname=" . $this->database, $this->uid, $this->pwd);
          $this->conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
      }catch(PDOException $exception){
          echo "Connection error : " . $exception->getMessage();

@@ -34,9 +34,9 @@ $(document).ready(function() {
                         document.querySelector("#alert").innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Error!</strong> ${data.msg}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
                     }
                 })
-                .catch((error) => {
-                    document.querySelector("#alert").innerHTML = `<div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>Error!</strong> ${error}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
-                })
+                // .catch((error) => {
+                //     document.querySelector("#alert").innerHTML = `<div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>Error!</strong> ${error}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+                // })
         } else {
             console.log("Passwords dont match");
             console.log(Password)
