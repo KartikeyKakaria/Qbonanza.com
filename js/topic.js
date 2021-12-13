@@ -20,23 +20,40 @@ window.onload = ()=>{
     //         content:document.querySelector('#content').value,
     //     }
     // }
-    let data = JSON.stringify(dat);
+    let data1 = JSON.stringify(dat);
     let params = {
         method: 'post',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: data,
+        body: data1,
     }
     fetch("/Qbonanza.com/php/topic.php", params)
     .then(response => response.json())
     .then(data => {
+        
         let questions = data.question;
         let str ="";
         questions.forEach(question => {
-            str+="<div class='question'><h2>"+question.title+"</h2><p>"+question.description+"</p><br><p>Posted by "+question.id+" on "+question.date+"</p></div>"
+            let name = "";
+            dat = {
+                method:'post',
+                hedares:{
+                    'Content-type': 'application/json',
+                },
+                body:JSON.stringify({id:question.user_id})
+            }
+            fetch("/Qbonanza.com/php/partials/_getusername.php",dat)
+            .then(response=>response.text())
+            .then(nam =>  {
+                name = nam;
+                str+="<div class='question'><h2>"+question.title+"</h2><p>"+question.description+"</p><br><p>Posted by "+name+" on "+question.date+"</p></div>";
+                document.querySelector("#questions").innerHTML = str;
+                // console.log("data success")
+            })
+            // .catch(err => console.error(err))
+            
         })
-        document.querySelector("#questions").innerHTML = str;
     })
     // .catch(err => console.log(err))
 

@@ -2,8 +2,8 @@
     include '_dbconnect.php';
     $json = file_get_contents('php://input');
     $dat = json_decode($json);
-    $id = $json->id;
-    $sql = "SELECT*FROM `users` WHERE `users`.`id` = $id"
+    $id = $dat->id;
+    $sql = "SELECT*FROM `user` WHERE `user`.`id` = '$id'";
     try{
         //Get DB Object
         $database = new Database();
@@ -13,7 +13,7 @@
         $stmt = $db->prepare($sql);
         $stmt->execute();
         $id = $stmt->fetchAll(PDO::FETCH_OBJ);
-        $topics = new Topics();
+        // $topics = new Topics();
         if($id){
            foreach($id as $user){
                echo $user->name;
@@ -23,4 +23,5 @@
     }catch(PDOException $e){
         echo '"error": {"text": '.$e->getMessage().'}';
     }
+    // echo($_SERVER['REQUEST_METHOD'] )
 ?>
