@@ -5,7 +5,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $dat = json_decode($json);
     $email = $dat->email;
     $password = $dat->password;
-    $sql = "SELECT*FROM `user` WHERE `user`.`email` = '$email'";
+    $sql = "SELECT*FROM `qbonanza``user` WHERE `user`.`email` = '$email'";
     try{
         //Get DB Object
         $database = new Database();

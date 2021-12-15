@@ -8,7 +8,7 @@
         $age = $data->age; 
         $email = $data->email;
         $password = $data->password; 
-        $sql = "INSERT INTO `user` (`id`, `name`, `email`, `age`, `password`, `date`) VALUES ('', '$name', '$email', '$age', '$password', current_timestamp())";
+        $sql = "INSERT INTO `qbonanza``user` (`id`, `name`, `email`, `age`, `password`, `date`) VALUES ('', '$name', '$email', '$age', '$password', current_timestamp())";
         
         try{
             //Get DB Object
