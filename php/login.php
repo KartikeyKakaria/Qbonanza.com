@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         $stmt = $db->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
-        if($result){
+        if(count($result)>=0){
             if(count($result) == 1){
                 if($result[0]->password == $password){
                     $data = $result[0];
