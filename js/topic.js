@@ -3,6 +3,12 @@ window.onload = ()=>{
     const href = window.location.href;
     const LastChar = href[href.length - 1];
     console.log(LastChar);
+    if(user == null){
+        document.querySelector("#ask").innerHTML = "<h2>Please login to ask questions</h2>"
+    }
+    else{
+        document.querySelector("#ask").innerHTML = '<label for="title">Title:</label><input type="text" class="form-control" placeholder="enter title" ="title"><br><label for="description">Description:</label><textarea placeholder="enter title" id="description" cols="15" rows="10" class="form-control"></textarea>';
+    }
     let dat = {
         id:LastChar,
     }

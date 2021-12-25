@@ -7,7 +7,7 @@
         $email =$data->email;
         $age =$data->age;
         $ider = $data->id;
-        $sql = "UPDATE `user` SET `name` = '$name', `email` = '$email', `age` = '$age' WHERE `user`.`id` = $ider";
+        $sql = "UPDATE `qbonanza`.`user` SET `name` = '$name', `email` = '$email', `age` = '$age' WHERE `user`.`id` = $ider";
         try{
             //Get DB Object
             $database = new Database();

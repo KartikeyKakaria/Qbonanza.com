@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 
 --
 -- Table structure for table `questions`
---
+
 
 CREATE TABLE `questions` (
   `id` int(11) NOT NULL,
@@ -115,7 +115,8 @@ ALTER TABLE `questions`
 --
 -- Indexes for table `topics`
 --
-
+ALTER TABLE `topics`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user`
