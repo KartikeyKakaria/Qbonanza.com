@@ -24,21 +24,24 @@ if (document.querySelector("#logout") !== undefined) {
         window.location = "login.html";
     })
 }
-function getusername(id){
-    let name="";
+
+
+
+
+function getusername(id) {
+
     dat = {
-        method:'post',
-        headers:{
+        method: 'post',
+        headers: {
             'Content-type': 'application/json',
         },
-        body:JSON.stringify({id:id})
+        body: JSON.stringify({ id: id })
     }
-    fetch("/Qbonanza.com/php/partials/_getusername.php",dat)
-            .then(response=>response.text())
-            .then(nam =>  {
-                
-                name= nam;
-                return name;
-            })
-            .catch(err=>{return err;})
+
+    return fetch("/Qbonanza.com/php/partials/_getusername.php", dat, true)
+        .then(response => response.text())
+        .then(nam => {
+            return nam;
+        })
+        .catch(err => { return err; })
 }
