@@ -2,7 +2,7 @@
 include 'partials/_dbconnect.php';
 if($_SERVER['REQUEST_METHOD']=="POST"){
     
-    $sql = "SELECT * FROM `topics`";
+    $sql = "SELECT * FROM `qbonanza`.`topics`";
     try{
         //Get DB Object
         $database = new Database();

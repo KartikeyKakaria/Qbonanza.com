@@ -3,7 +3,7 @@
     $json = file_get_contents('php://input');
     $dat = json_decode($json);
     $id = $dat->id;
-    $sql = "SELECT*FROM `user` WHERE `user`.`id` = '$id'";
+    $sql = "SELECT*FROM `qbonanza`.`user` WHERE `user`.`id` = '$id'";
     try{
         //Get DB Object
         $database = new Database();

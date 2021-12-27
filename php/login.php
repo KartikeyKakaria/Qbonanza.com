@@ -5,7 +5,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $dat = json_decode($json);
     $email = $dat->email;
     $password = $dat->password;
-    $sql = "SELECT*FROM `user` WHERE `user`.`email` = '$email'";
+    $sql = "SELECT*FROM `qbonanza`.`user` WHERE `user`.`email` = '$email'";
     try{
         //Get DB Object
         $database = new Database();
@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         $stmt = $db->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
-        if($result){
+        if(count($result)>=0){
             if(count($result) == 1){
                 if($result[0]->password == $password){
                     $data = $result[0];

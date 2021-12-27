@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $id = $data->id;
     // echo $id;
     function displayQuestions($id){
-        $sql = "SELECT * FROM `questions` WHERE `topic_id` = '$id'";
+        $sql = "SELECT * FROM `qbonanza`.`questions` WHERE `topic_id` = '$id'";
         try {
             //Get DB Object
             $database = new Database();
