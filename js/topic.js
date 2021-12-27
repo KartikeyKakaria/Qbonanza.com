@@ -24,7 +24,7 @@ window.onload = ()=>{
             let str ="";
             questions.forEach(question => {
                 // let name = ""; , 
-                str+="<div class='question'><h4>"+question.title+"</h4><p>"+question.description+"</p><br><p>Posted by "+question.id+" on "+question.date+"</p></div>";
+                str+="<div class='question'><h4>"+question.title+"</h4><p>"+question.description+"</p><br><p>Posted by "+question.user_id+" on "+question.date+"</p></div>";
                 document.querySelector("#questions").innerHTML = str;
                 // .catch(err => console.error(err))
                 
@@ -36,8 +36,8 @@ window.onload = ()=>{
         document.querySelector("#ask").innerHTML = "<h2>Please login to ask questions</h2>"
     }
     else{
-        document.querySelector("#ask").innerHTML = '<label for="title">Title:</label><input type="text" class="form-control" placeholder="enter title" id="title"><br><label for="description">Description:</label><textarea placeholder="enter title" id="description" cols="15" rows="10" class="form-control"></textarea><br><button id="ask" class="btn btn-warning">Ask</button>';
-        document.querySelector("#ask").addEventListener("click",()=>{
+        document.querySelector("#ask").innerHTML = '<label for="title">Title:</label><input type="text" class="form-control" placeholder="enter title" id="title"><br><label for="description">Description:</label><textarea placeholder="enter title" id="description" cols="15" rows="10" class="form-control"></textarea><br><button id="askBtn" class="btn btn-warning">Ask</button>';
+        document.querySelector("#askBtn").addEventListener("click",()=>{
             const userId = JSON.parse(user).id;
             const title = document.querySelector("#title").value;
             const description = document.querySelector("#description").value;
@@ -46,7 +46,7 @@ window.onload = ()=>{
                 user_id:userId,
                 title:title,
                 description:description,
-                id:id,
+                topic_id:id,
             }
             const params = {
                 method: 'post',
@@ -57,8 +57,11 @@ window.onload = ()=>{
             }
             fetch('/Qbonanza.com/php/post.php',params)
             .then(response => response.json())
-            .then(data => console.log(data))
-            .then
+            .then(data => {
+                console.log(data.msg);
+                showQuestions(LastChar);
+            })
+            .catch(err => console.log(err))
             
         })
     }
