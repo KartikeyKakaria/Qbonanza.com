@@ -26,7 +26,7 @@ window.onload = () => {
                     // let name = ""; , 
                     getusername(question.user_id)
                         .then(data => {
-                            str += "<div class='question'><h4>" + question.title + "</h4><p>" + question.description + "</p><br><p>Posted by " + data + " on " + question.date + "</p></div>";
+                            str += `<div class='question'><a href=question.html?id=${question.id}><h4>${question.title}</h4></a><p>${question.description}</p><br><p>Posted by ${data} on ${question.date}</p></div>`;
                             document.querySelector("#questions").innerHTML = str;
                         })
                         .catch(err => console.log(err))
