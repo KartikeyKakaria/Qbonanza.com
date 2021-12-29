@@ -1,4 +1,5 @@
 function displayData() {
+    //gets data from ls
     const user = JSON.parse(localStorage.getItem('user'));
     let name = document.querySelector("#name");
     let email = document.querySelector("#email");
@@ -6,6 +7,7 @@ function displayData() {
     let hName = document.querySelector("#headerName");
     let hEmail = document.querySelector("#headerEmail");
     let navName = document.querySelector("#navName");
+    //displays data
     name.innerHTML = user.name;
     email.innerHTML = user.email;
     age.innerHTML = user.age;
@@ -18,8 +20,10 @@ window.onload = () => {
     displayData();
     const lol = localStorage.getItem('user');
     if (lol == null) {
+        //go to index if user not loginned
         window.location = "index.html";
     } else {
+        //if user clicks edit, change data to form
         document.querySelector("#edit").addEventListener("click", () => {
             document.querySelector("#name").innerHTML = "<input id='namer' placeholder='enter name'>";
             document.querySelector("#email").innerHTML = "<input id='emailer' placeholder='Enter email'>";
@@ -27,6 +31,7 @@ window.onload = () => {
             // document.querySelector('thead').innerHTML = '';
             document.querySelector('#footer').innerHTML = '<td><button class="btn btn-success" id="submit">Submit</button></td>';
             document.querySelector("#submit").addEventListener("click", () => {
+                //once user clicks submit, then post the data in fetch
                 alert('hi')
                 let dat = {
                     name: document.querySelector("#namer").value,
@@ -47,6 +52,7 @@ window.onload = () => {
                     .then((data) => {
                         if (data.status) {
                             console.log(data.msg)
+                                //if successfully edits, then update ls
                             let newUse = {
                                 login: true,
                                 id: data.id,
