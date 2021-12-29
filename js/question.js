@@ -24,4 +24,18 @@ window.onload = () => {
                 })
         })
 
+    function displayComments(ques_id) {
+        id = {
+            method: 'post',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: '{"quesid":' + ques_id + '}'
+
+        }
+        fetch('php/comments.php', id)
+            .then(rep => rep.json())
+            .then(data => console.log(data))
+    }
+
 }
