@@ -37,5 +37,6 @@ window.onload = () => {
             .then(rep => rep.json())
             .then(data => console.log(data))
     }
+    displayComments(quesId);
 
 }
