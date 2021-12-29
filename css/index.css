@@ -1,27 +1,30 @@
-body{
-    background-image:url('/Qbonanza.com/images/backgorund_index.PNG');
-    background-repeat:no-repeat;
+body {
+    background-image: url('/Qbonanza.com/images/backgorund_index.PNG');
+    background-repeat: no-repeat;
     background-size: cover;
 }
-#topics{
+
+#topics {
     display: flex;
-    border-top:2px solid black;
+    border-top: 2px solid black;
     /* justify-content:center; */
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
-.topic{
-    padding:5px;
+
+.topic {
+    padding: 5px;
     /* width:12%; */
     /* display:inline; */
     /* justify-content:center;
     text-align:center; */
-    background-image:linear-gradient(to bottom right,lightgray, white);
-    border:2px solid white;
-    margin:10px;
+    background-image: linear-gradient(to bottom right, lightgray, white);
+    border: 2px solid white;
+    margin: 10px;
     /* flex-wrap:wrap; */
 }
-button{
-    background-color:blue;
-    padding:10px;
-    border-radius:12px;
+
+button {
+    background-color: blue;
+    padding: 10px;
+    border-radius: 12px;
 }

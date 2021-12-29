@@ -3,11 +3,8 @@ include 'partials/_dbconnect.php';
 if($_SERVER['REQUEST_METHOD']=="POST"){
     $json = file_get_contents('php://input');
     $data = json_decode($json);
-    $userid = $data->user_id;  
-    $topicid = $data->topic_id; 
-    $title = $data->title;
-    $description = $data->description; 
-    $sql = "INSERT INTO `qbonanza`.`questions` (`id`, `user_id`, `topic_id`, `title`, `description`, `date`) VALUES ('', '$userid', '$topicid', '$title', '$description', current_timestamp())";
+    $sqlQ = $data->sql;
+    $sql = "$sqlQ";
     try{
         //Get DB Object
         $database = new Database();
