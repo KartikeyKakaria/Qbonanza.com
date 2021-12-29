@@ -35,7 +35,17 @@ window.onload = () => {
         }
         fetch('php/comments.php', id)
             .then(rep => rep.json())
-            .then(data => console.log(data))
+            .then(comments => {
+                let str = "";
+                comments.forEach(comment => {
+                    getusername(comment.user_id)
+                        .then(name => {
+                            str += `<div class='question'><h4>${name} ${comment.date}</h4><p>${comment.content}</p></div>`;
+                            document.querySelector("#comments").innerHTML = str;
+                        })
+                        .catch(err => console.log(err))
+                })
+            })
     }
     displayComments(quesId);
 
