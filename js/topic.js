@@ -46,10 +46,7 @@ window.onload = () => {
             const description = document.querySelector("#description").value;
             const id = LastChar;
             const data = {
-                user_id: userId,
-                title: title,
-                description: description,
-                topic_id: id,
+                sql: "INSERT INTO `qbonanza`.`questions` (`id`, `user_id`, `topic_id`, `title`,`description`, `date`) VALUES ('', '" + userId + "', '" + id + "', '" + title + "','" + description + "', current_timestamp());",
             }
             const params = {
                 method: 'post',
