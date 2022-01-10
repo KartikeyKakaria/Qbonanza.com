@@ -11,7 +11,7 @@ function updateHeader() {
     } else {
         //if user is logged in set the navbar according to the user details
         let userDetails = JSON.parse(user);
-        document.querySelector('#nav').innerHTML = '<a href="profile.html" class="mx-2"><button id="navName" type="button" class="btn btn-success">' + userDetails.name + '</button></a><button id="logout" type="button" class="btn btn-warning" id="logout">Logout</button>';
+        document.querySelector('#nav').innerHTML = '<a href="profile.html" class="mx-2"><button id="navName" type="button" class="bg-green-400 p-2 text-black hover:bg-green-600 hover:text-white">' + userDetails.name + '</button></a><button id="logout" type="button" class="bg-yellow-400 p-2 text-black hover:bg-yellow-600 hover:text-white" id="logout">Logout</button>';
     }
 }
 updateHeader();

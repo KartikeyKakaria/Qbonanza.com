@@ -11,7 +11,7 @@ if (user !== null) {
 function displayData(data) {
     let htmlStr = "";
     data.forEach((element) => {
-        htmlStr += `<div class="topic"><img src="images/topic/${element.id}.png" height="75px" width="75px" alt="USER"><button class="topicBtn" id="${element.id}">${element.name}</button></div>`;
+        htmlStr += `<div class="topic w-80 flex"><img src="images/topic/${element.id}.png" height="75px" width="75px" alt="USER"><button class="topicBtn bg-red-400 text-black hover:bg-red-700 hover:text-white px-5 text-2xl mx-2" id="${element.id}">${element.name}</button></div>`;
     })
     document.querySelector('#topics').innerHTML = htmlStr;
     //makes the btn of every topic to redirect user to the individual topic page
