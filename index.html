@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="bg-black text-white py-5 px-2 flex">
+    <div class="2xl:block justify-between hidden bg-black text-white py-5 px-1 flex">
         <ul class="flex space-x-3 mr-96 justify-start text-xl">
             <li><a href="/Qbonanza.com/">Home</a></li>
             <li>About</li>
@@ -27,6 +27,21 @@
         </ul>
         <div id="nav" class="flex"></div>
     </div>
+    <div class="flex justify-between sm:block bg-black text-white py-5 px-3 flex  2xl:hidden">
+        <!-- <div class="sm:block flex justify-between "> -->
+        <ul class="flex space-x-3  text-xl">
+            <li><a href="/Qbonanza.com/">Home</a></li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+        <ul id="search" class="flex relative ">
+            <li><input type="text" name="search" id="search" class=" flex h-9 w-60 rounded text-black p-1"></li>
+            <li><button class="bg-blue-500 p-2 text-black hover:bg-blue-700 hover:text-white">Search</button></li>
+            <div id="navSm" class=""></div>
+        </ul>
+        <!-- </div> -->
+    </div>
+
     <div class="container">
         <h1 class="text-3xl font-bold mx-2 my-2">Welcome <span id="title"></span></h1>
         <h2 class="text-2xl mx-2 my-2">What would you like to explore today?</h2>

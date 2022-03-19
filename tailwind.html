@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-screen bg-gray-100 items-center justify-center">
+    <button id="userDrop" class="bg-blue-400 p-2 rounded">Hello</button>
+    <div id="menu" class="hidden bg-gray-200 flex-col rounded mt-1 p-2 text-sm w-32">
+        <a href="profile.html" class="px-2 py-1 hover:bg-blue-200">Profile</li>
+        <a href="notifs.html" class="px-2 py-1 hover:bg-blue-200">Notifications</li>
+        <a class="px-2 py-1 hover:bg-blue-200">Logout</li>
+    </div>
+</body>
+<script>
+    window.onload = () => {
+        const button = document.querySelector("#userDrop");
+        const div = document.querySelector("#menu");
+        button.addEventListener('click', () => {
+            if (div.classList.contains('hidden')) {
+                div.classList.remove('hidden');
+                div.classList.add('flex')
+            } else if (div.classList.contains('flex')) {
+                div.classList.remove('flex');
+                div.classList.add('hidden')
+            }
+        })
+    }
+</script>
+
+</html>
