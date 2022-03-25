@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Nothing</title>
+</head>
+
+<body>
+    <nav id="lg-nav" class=" space-x-[12%]  flex-rowflex flex-wrap bg-gray-300 text-black p-5">
+        <div class="relative inline-flex flex-grow w-auto mr-auto" id="page-nav">
+            <a class="p-3 rounded text-xl hover:bg-gray-500 hover:text-white" href="#"><span>Home</span></a>
+            <a class="p-3 rounded text-xl hover:bg-gray-500 hover:text-white" href="#"><span>About us</span></a>
+            <a class="p-3 rounded text-xl hover:bg-gray-500 hover:text-white" href="#"><span>Contact</span></a>
+        </div>
+        <button class="mx-auto hover:bg-gray-500 hover:text-white p-3 rounded" id="Logo"><a href="#" class="text-2xl">Qbonanza.com </a></button>
+        <div class="text-black inline-flex flex-row w-auto ml-auto" id="user-nav">
+            <input placeholder="Search" type="text" class="w-48 rounded p-5 m-2 h-4">
+            <button class=" bg-blue-400 p-3 m-1 rounded text-black hover:bg-blue-600 hover:text-white">Search</button>
+            <button class=" bg-green-400 p-3 m-1 rounded text-black hover:bg-green-600 hover:text-white">Kartikey</button>
+            <button class=" bg-yellow-400 p-3 m-1 rounded text-black hover:bg-yellow-600 hover:text-white">Kartikey</button>
+
+        </div>
+    </nav>
+    nav
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function dropdown(clicker, target) {
+        const toggler = clicker;
+        const hiddenNav = target
+        toggler.addEventListener('click', e => {
+            $(hiddenNav).animate({
+                height: "toggle",
+            })
+        })
+    }
+    window.onload = function() {
+
+    }
+</script>
+
+</html>
