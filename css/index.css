@@ -28,3 +28,8 @@ button {
     padding: 10px;
     border-radius: 12px;
 }
+
+#search{
+    position:relative;
+    justify:end;
+}
