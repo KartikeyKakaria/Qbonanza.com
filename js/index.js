@@ -60,7 +60,9 @@ if (document.querySelector("#logout") !== undefined) {
     alert('no')
 }
 
+function getQuestionDetails(id) {
 
+}
 
 //gets the name of user by user's id
 function getusername(id) {
