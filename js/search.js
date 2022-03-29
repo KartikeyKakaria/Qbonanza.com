@@ -1,11 +1,15 @@
-const searchBtn = document.getElementById('searchbtn1');
-const searchBtn2 = document.getElementById('searchbtn2');
-const buttons = [searchBtn, searchBtn2];
-buttons.forEach((element) => {
-    element.addEventListener('click', e => {
+window.onload = () => {
+    const query = window.location.href.split('=')[1];
+    let ques = {
+        method: 'post',
+        headers: {
+            'Content-type': 'application/json',
+        },
+        body: '{"query":' + query + '}'
 
-        const query = document.querySelector("#search" + element.id[9]).value;
-        window.location = "/Qbonanza.com/search.html?query=" + query;
-
-    })
-})
+    }
+    fetch('/Qbonanza.com/php/search.php', ques)
+        .then(rep => rep.json())
+        .then(result => console.log(result))
+        // .catch(err => console.log(err))
+}
