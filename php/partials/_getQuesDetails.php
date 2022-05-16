@@ -19,10 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
         else{
             $message = 'Something went wrong. We are sorry for the inconvenience caused.';
-            echo json_encode([
-                'status' => false,
-                'msg' => $message,
-            ]);
+            echo json_encode($result);
         }
     }catch(PDOException $e){
         $data = array('login'=>false,'message'=>$e->getMessage());

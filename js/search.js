@@ -13,6 +13,6 @@ window.onload = () => {
     }
     fetch('/Qbonanza.com/php/search.php', ques)
         .then(rep => rep.json())
-        .then(result => console.log(result))
+        .then(result => getQuesDetails(result))
         // .catch(err => console.log(err))
 }
