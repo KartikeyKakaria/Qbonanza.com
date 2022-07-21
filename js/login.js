@@ -34,7 +34,7 @@ window.onload = () => {
                     //warn the user that credentials are invalid
                     document.querySelector("#alert").innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Error!</strong> ${data.msg}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
                 }
-                // console.log(JSON.parse(data));
+                console.log(JSON.parse(data));
             })
             .catch((error) => {
                 //check for any web error
